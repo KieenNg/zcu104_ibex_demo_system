@@ -1,0 +1,433 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Thu Aug  8 11:46:36 2024
+| Host         : edabk-ic-design running 64-bit Ubuntu 20.04.6 LTS
+| Command      : report_methodology -file top_zcu104_methodology_drc_routed.rpt -pb top_zcu104_methodology_drc_routed.pb -rpx top_zcu104_methodology_drc_routed.rpx
+| Design       : top_zcu104
+| Device       : xczu7ev-ffvc1156-2-e
+| Speed File   : -2
+| Design State : Fully Routed
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 77
++-----------+------------------+------------------------------------------------+------------+
+| Rule      | Severity         | Description                                    | Violations |
++-----------+------------------+------------------------------------------------+------------+
+| TIMING-6  | Critical Warning | No common primary clock between related clocks | 2          |
+| TIMING-7  | Critical Warning | No common node between related clocks          | 2          |
+| TIMING-14 | Critical Warning | LUT on the clock tree                          | 1          |
+| SYNTH-15  | Warning          | Byte wide write enable not inferred            | 16         |
+| TIMING-16 | Warning          | Large setup violation                          | 37         |
+| TIMING-18 | Warning          | Missing input or output delay                  | 15         |
+| XDCH-2    | Warning          | Same min and max delay values on IO port       | 3          |
+| LATCH-1   | Advisory         | Existing latches in the design                 | 1          |
++-----------+------------------+------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+TIMING-6#1 Critical Warning
+No common primary clock between related clocks  
+The clocks ref_clk and tck are related (timed together) but they have no common primary clock. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks ref_clk] -to [get_clocks tck]
+Related violations: <none>
+
+TIMING-6#2 Critical Warning
+No common primary clock between related clocks  
+The clocks tck and ref_clk are related (timed together) but they have no common primary clock. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks tck] -to [get_clocks ref_clk]
+Related violations: <none>
+
+TIMING-7#1 Critical Warning
+No common node between related clocks  
+The clocks ref_clk and tck are related (timed together) but they have no common node. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks ref_clk] -to [get_clocks tck]
+Related violations: <none>
+
+TIMING-7#2 Critical Warning
+No common node between related clocks  
+The clocks tck and ref_clk are related (timed together) but they have no common node. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks tck] -to [get_clocks ref_clk]
+Related violations: <none>
+
+TIMING-14#1 Critical Warning
+LUT on the clock tree  
+The LUT u_ibex_demo_system/u_top/core_clock_gate_i/gen_generic.u_impl_generic/valid_q[2]_i_6 has been found on the clock tree. Run opt_design to optimize the clock trees, then re-run report_methodology. If LUT(s) are still present in the clock trees, modify the RTL or the synthesis options accordingly to move the clock gating logic to dedicated clock enable resources. Keep in mind that post-opt_design database cannot be used for pin-planning tasks
+Related violations: <none>
+
+SYNTH-15#1 Warning
+Byte wide write enable not inferred  
+Byte wide write enable (BWWE) is not inferred for Block RAM u_ibex_demo_system/u_ram/u_ram/mem_reg_0_bram_0 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
+Related violations: <none>
+
+SYNTH-15#2 Warning
+Byte wide write enable not inferred  
+Byte wide write enable (BWWE) is not inferred for Block RAM u_ibex_demo_system/u_ram/u_ram/mem_reg_0_bram_1 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
+Related violations: <none>
+
+SYNTH-15#3 Warning
+Byte wide write enable not inferred  
+Byte wide write enable (BWWE) is not inferred for Block RAM u_ibex_demo_system/u_ram/u_ram/mem_reg_0_bram_2 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
+Related violations: <none>
+
+SYNTH-15#4 Warning
+Byte wide write enable not inferred  
+Byte wide write enable (BWWE) is not inferred for Block RAM u_ibex_demo_system/u_ram/u_ram/mem_reg_0_bram_3 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
+Related violations: <none>
+
+SYNTH-15#5 Warning
+Byte wide write enable not inferred  
+Byte wide write enable (BWWE) is not inferred for Block RAM u_ibex_demo_system/u_ram/u_ram/mem_reg_1_bram_0 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
+Related violations: <none>
+
+SYNTH-15#6 Warning
+Byte wide write enable not inferred  
+Byte wide write enable (BWWE) is not inferred for Block RAM u_ibex_demo_system/u_ram/u_ram/mem_reg_1_bram_1 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
+Related violations: <none>
+
+SYNTH-15#7 Warning
+Byte wide write enable not inferred  
+Byte wide write enable (BWWE) is not inferred for Block RAM u_ibex_demo_system/u_ram/u_ram/mem_reg_1_bram_2 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
+Related violations: <none>
+
+SYNTH-15#8 Warning
+Byte wide write enable not inferred  
+Byte wide write enable (BWWE) is not inferred for Block RAM u_ibex_demo_system/u_ram/u_ram/mem_reg_1_bram_3 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
+Related violations: <none>
+
+SYNTH-15#9 Warning
+Byte wide write enable not inferred  
+Byte wide write enable (BWWE) is not inferred for Block RAM u_ibex_demo_system/u_ram/u_ram/mem_reg_2_bram_0 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
+Related violations: <none>
+
+SYNTH-15#10 Warning
+Byte wide write enable not inferred  
+Byte wide write enable (BWWE) is not inferred for Block RAM u_ibex_demo_system/u_ram/u_ram/mem_reg_2_bram_1 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
+Related violations: <none>
+
+SYNTH-15#11 Warning
+Byte wide write enable not inferred  
+Byte wide write enable (BWWE) is not inferred for Block RAM u_ibex_demo_system/u_ram/u_ram/mem_reg_2_bram_2 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
+Related violations: <none>
+
+SYNTH-15#12 Warning
+Byte wide write enable not inferred  
+Byte wide write enable (BWWE) is not inferred for Block RAM u_ibex_demo_system/u_ram/u_ram/mem_reg_2_bram_3 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
+Related violations: <none>
+
+SYNTH-15#13 Warning
+Byte wide write enable not inferred  
+Byte wide write enable (BWWE) is not inferred for Block RAM u_ibex_demo_system/u_ram/u_ram/mem_reg_3_bram_0 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
+Related violations: <none>
+
+SYNTH-15#14 Warning
+Byte wide write enable not inferred  
+Byte wide write enable (BWWE) is not inferred for Block RAM u_ibex_demo_system/u_ram/u_ram/mem_reg_3_bram_1 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
+Related violations: <none>
+
+SYNTH-15#15 Warning
+Byte wide write enable not inferred  
+Byte wide write enable (BWWE) is not inferred for Block RAM u_ibex_demo_system/u_ram/u_ram/mem_reg_3_bram_2 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
+Related violations: <none>
+
+SYNTH-15#16 Warning
+Byte wide write enable not inferred  
+Byte wide write enable (BWWE) is not inferred for Block RAM u_ibex_demo_system/u_ram/u_ram/mem_reg_3_bram_3 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired..
+Related violations: <none>
+
+TIMING-16#1 Warning
+Large setup violation  
+There is a large setup violation of -1.052 ns between u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_resp/u_prim_sync_reqack/gen_rz_hs_protocol.src_fsm_q_reg/C (clocked by ref_clk) and u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_resp/u_prim_sync_reqack/gen_rz_hs_protocol.req_sync/u_sync_1/gen_generic.u_impl_generic/q_o_reg[0]/D (clocked by tck). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#2 Warning
+Large setup violation  
+There is a large setup violation of -1.091 ns between u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_resp/data_q_reg[1]/C (clocked by ref_clk) and u_ibex_demo_system/gen_dm_top.u_dm_top/dap/data_q_reg[5]/D (clocked by tck). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#3 Warning
+Large setup violation  
+There is a large setup violation of -1.094 ns between u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_resp/data_q_reg[1]/C (clocked by ref_clk) and u_ibex_demo_system/gen_dm_top.u_dm_top/dap/data_q_reg[29]/D (clocked by tck). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#4 Warning
+Large setup violation  
+There is a large setup violation of -1.102 ns between u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_resp/data_q_reg[1]/C (clocked by ref_clk) and u_ibex_demo_system/gen_dm_top.u_dm_top/dap/dr_q_reg[1]/D (clocked by tck). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#5 Warning
+Large setup violation  
+There is a large setup violation of -1.113 ns between u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_resp/data_q_reg[1]/C (clocked by ref_clk) and u_ibex_demo_system/gen_dm_top.u_dm_top/dap/data_q_reg[31]/D (clocked by tck). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#6 Warning
+Large setup violation  
+There is a large setup violation of -1.114 ns between u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_resp/data_q_reg[1]/C (clocked by ref_clk) and u_ibex_demo_system/gen_dm_top.u_dm_top/dap/data_q_reg[30]/D (clocked by tck). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#7 Warning
+Large setup violation  
+There is a large setup violation of -1.117 ns between u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_req/u_prim_sync_reqack/gen_rz_hs_protocol.dst_fsm_q_reg/C (clocked by ref_clk) and u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_req/u_prim_sync_reqack/gen_rz_hs_protocol.ack_sync/u_sync_1/gen_generic.u_impl_generic/q_o_reg[0]/D (clocked by tck). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#8 Warning
+Large setup violation  
+There is a large setup violation of -1.119 ns between u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_resp/data_q_reg[1]/C (clocked by ref_clk) and u_ibex_demo_system/gen_dm_top.u_dm_top/dap/data_q_reg[4]/D (clocked by tck). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#9 Warning
+Large setup violation  
+There is a large setup violation of -1.121 ns between u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_resp/data_q_reg[1]/C (clocked by ref_clk) and u_ibex_demo_system/gen_dm_top.u_dm_top/dap/data_q_reg[14]/D (clocked by tck). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#10 Warning
+Large setup violation  
+There is a large setup violation of -1.125 ns between u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_resp/data_q_reg[1]/C (clocked by ref_clk) and u_ibex_demo_system/gen_dm_top.u_dm_top/dap/data_q_reg[8]/D (clocked by tck). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#11 Warning
+Large setup violation  
+There is a large setup violation of -1.126 ns between u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_resp/data_q_reg[1]/C (clocked by ref_clk) and u_ibex_demo_system/gen_dm_top.u_dm_top/dap/data_q_reg[7]/D (clocked by tck). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#12 Warning
+Large setup violation  
+There is a large setup violation of -1.131 ns between u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_resp/data_q_reg[1]/C (clocked by ref_clk) and u_ibex_demo_system/gen_dm_top.u_dm_top/dap/data_q_reg[28]/D (clocked by tck). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#13 Warning
+Large setup violation  
+There is a large setup violation of -1.132 ns between u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_resp/data_q_reg[1]/C (clocked by ref_clk) and u_ibex_demo_system/gen_dm_top.u_dm_top/dap/data_q_reg[27]/D (clocked by tck). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#14 Warning
+Large setup violation  
+There is a large setup violation of -1.133 ns between u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_resp/data_q_reg[1]/C (clocked by ref_clk) and u_ibex_demo_system/gen_dm_top.u_dm_top/dap/data_q_reg[6]/D (clocked by tck). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#15 Warning
+Large setup violation  
+There is a large setup violation of -1.134 ns between u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_resp/data_q_reg[1]/C (clocked by ref_clk) and u_ibex_demo_system/gen_dm_top.u_dm_top/dap/data_q_reg[19]/D (clocked by tck). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#16 Warning
+Large setup violation  
+There is a large setup violation of -1.141 ns between u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_resp/data_q_reg[1]/C (clocked by ref_clk) and u_ibex_demo_system/gen_dm_top.u_dm_top/dap/data_q_reg[26]/D (clocked by tck). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#17 Warning
+Large setup violation  
+There is a large setup violation of -1.144 ns between u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_resp/data_q_reg[1]/C (clocked by ref_clk) and u_ibex_demo_system/gen_dm_top.u_dm_top/dap/data_q_reg[16]/D (clocked by tck). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#18 Warning
+Large setup violation  
+There is a large setup violation of -1.146 ns between u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_resp/data_q_reg[1]/C (clocked by ref_clk) and u_ibex_demo_system/gen_dm_top.u_dm_top/dap/data_q_reg[13]/D (clocked by tck). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#19 Warning
+Large setup violation  
+There is a large setup violation of -1.147 ns between u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_resp/data_q_reg[1]/C (clocked by ref_clk) and u_ibex_demo_system/gen_dm_top.u_dm_top/dap/data_q_reg[25]/D (clocked by tck). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#20 Warning
+Large setup violation  
+There is a large setup violation of -1.148 ns between u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_resp/data_q_reg[1]/C (clocked by ref_clk) and u_ibex_demo_system/gen_dm_top.u_dm_top/dap/data_q_reg[24]/D (clocked by tck). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#21 Warning
+Large setup violation  
+There is a large setup violation of -1.154 ns between u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_resp/data_q_reg[17]/C (clocked by ref_clk) and u_ibex_demo_system/gen_dm_top.u_dm_top/dap/data_q_reg[15]/D (clocked by tck). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#22 Warning
+Large setup violation  
+There is a large setup violation of -1.166 ns between u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_resp/data_q_reg[1]/C (clocked by ref_clk) and u_ibex_demo_system/gen_dm_top.u_dm_top/dap/data_q_reg[1]/D (clocked by tck). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#23 Warning
+Large setup violation  
+There is a large setup violation of -1.180 ns between u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_resp/data_q_reg[5]/C (clocked by ref_clk) and u_ibex_demo_system/gen_dm_top.u_dm_top/dap/data_q_reg[3]/D (clocked by tck). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#24 Warning
+Large setup violation  
+There is a large setup violation of -1.189 ns between u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_resp/data_q_reg[11]/C (clocked by ref_clk) and u_ibex_demo_system/gen_dm_top.u_dm_top/dap/data_q_reg[9]/D (clocked by tck). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#25 Warning
+Large setup violation  
+There is a large setup violation of -1.192 ns between u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_resp/data_q_reg[1]/C (clocked by ref_clk) and u_ibex_demo_system/gen_dm_top.u_dm_top/dap/data_q_reg[22]/D (clocked by tck). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#26 Warning
+Large setup violation  
+There is a large setup violation of -1.194 ns between u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_resp/data_q_reg[1]/C (clocked by ref_clk) and u_ibex_demo_system/gen_dm_top.u_dm_top/dap/error_q_reg[0]/D (clocked by tck). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#27 Warning
+Large setup violation  
+There is a large setup violation of -1.196 ns between u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_resp/data_q_reg[1]/C (clocked by ref_clk) and u_ibex_demo_system/gen_dm_top.u_dm_top/dap/data_q_reg[17]/D (clocked by tck). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#28 Warning
+Large setup violation  
+There is a large setup violation of -1.208 ns between u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_resp/data_q_reg[12]/C (clocked by ref_clk) and u_ibex_demo_system/gen_dm_top.u_dm_top/dap/data_q_reg[10]/D (clocked by tck). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#29 Warning
+Large setup violation  
+There is a large setup violation of -1.216 ns between u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_resp/data_q_reg[23]/C (clocked by ref_clk) and u_ibex_demo_system/gen_dm_top.u_dm_top/dap/data_q_reg[21]/D (clocked by tck). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#30 Warning
+Large setup violation  
+There is a large setup violation of -1.219 ns between u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_resp/data_q_reg[1]/C (clocked by ref_clk) and u_ibex_demo_system/gen_dm_top.u_dm_top/dap/data_q_reg[23]/D (clocked by tck). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#31 Warning
+Large setup violation  
+There is a large setup violation of -1.233 ns between u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_resp/data_q_reg[1]/C (clocked by ref_clk) and u_ibex_demo_system/gen_dm_top.u_dm_top/dap/data_q_reg[12]/D (clocked by tck). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#32 Warning
+Large setup violation  
+There is a large setup violation of -1.235 ns between u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_resp/data_q_reg[1]/C (clocked by ref_clk) and u_ibex_demo_system/gen_dm_top.u_dm_top/dap/dr_q_reg[0]/D (clocked by tck). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#33 Warning
+Large setup violation  
+There is a large setup violation of -1.236 ns between u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_resp/data_q_reg[1]/C (clocked by ref_clk) and u_ibex_demo_system/gen_dm_top.u_dm_top/dap/data_q_reg[20]/D (clocked by tck). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#34 Warning
+Large setup violation  
+There is a large setup violation of -1.242 ns between u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_resp/data_q_reg[1]/C (clocked by ref_clk) and u_ibex_demo_system/gen_dm_top.u_dm_top/dap/data_q_reg[0]/D (clocked by tck). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#35 Warning
+Large setup violation  
+There is a large setup violation of -1.267 ns between u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_resp/data_q_reg[13]/C (clocked by ref_clk) and u_ibex_demo_system/gen_dm_top.u_dm_top/dap/data_q_reg[11]/D (clocked by tck). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#36 Warning
+Large setup violation  
+There is a large setup violation of -1.374 ns between u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_resp/data_q_reg[20]/C (clocked by ref_clk) and u_ibex_demo_system/gen_dm_top.u_dm_top/dap/data_q_reg[18]/D (clocked by tck). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#37 Warning
+Large setup violation  
+There is a large setup violation of -1.400 ns between u_ibex_demo_system/gen_dm_top.u_dm_top/dap/i_dmi_cdc/i_cdc_resp/data_q_reg[4]/C (clocked by ref_clk) and u_ibex_demo_system/gen_dm_top.u_dm_top/dap/data_q_reg[2]/D (clocked by tck). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-18#1 Warning
+Missing input or output delay  
+An input delay is missing on ser0_rx relative to the rising and/or falling clock edge(s) of ref_clk.
+Related violations: <none>
+
+TIMING-18#2 Warning
+Missing input or output delay  
+An input delay is missing on td_i relative to the rising and/or falling clock edge(s) of tck.
+Related violations: <none>
+
+TIMING-18#3 Warning
+Missing input or output delay  
+An input delay is missing on tms_i relative to the rising and/or falling clock edge(s) of tck.
+Related violations: <none>
+
+TIMING-18#4 Warning
+Missing input or output delay  
+An output delay is missing on DISP_CTRL[0] relative to the rising and/or falling clock edge(s) of ref_clk.
+Related violations: <none>
+
+TIMING-18#5 Warning
+Missing input or output delay  
+An output delay is missing on DISP_CTRL[1] relative to the rising and/or falling clock edge(s) of ref_clk.
+Related violations: <none>
+
+TIMING-18#6 Warning
+Missing input or output delay  
+An output delay is missing on DISP_CTRL[2] relative to the rising and/or falling clock edge(s) of ref_clk.
+Related violations: <none>
+
+TIMING-18#7 Warning
+Missing input or output delay  
+An output delay is missing on DISP_CTRL[3] relative to the rising and/or falling clock edge(s) of ref_clk.
+Related violations: <none>
+
+TIMING-18#8 Warning
+Missing input or output delay  
+An output delay is missing on LED[0] relative to the rising and/or falling clock edge(s) of ref_clk.
+Related violations: <none>
+
+TIMING-18#9 Warning
+Missing input or output delay  
+An output delay is missing on LED[1] relative to the rising and/or falling clock edge(s) of ref_clk.
+Related violations: <none>
+
+TIMING-18#10 Warning
+Missing input or output delay  
+An output delay is missing on LED[2] relative to the rising and/or falling clock edge(s) of ref_clk.
+Related violations: <none>
+
+TIMING-18#11 Warning
+Missing input or output delay  
+An output delay is missing on LED[3] relative to the rising and/or falling clock edge(s) of ref_clk.
+Related violations: <none>
+
+TIMING-18#12 Warning
+Missing input or output delay  
+An output delay is missing on SPI_SCK relative to the rising and/or falling clock edge(s) of ref_clk.
+Related violations: <none>
+
+TIMING-18#13 Warning
+Missing input or output delay  
+An output delay is missing on SPI_TX relative to the rising and/or falling clock edge(s) of ref_clk.
+Related violations: <none>
+
+TIMING-18#14 Warning
+Missing input or output delay  
+An output delay is missing on ser0_tx relative to the rising and/or falling clock edge(s) of ref_clk.
+Related violations: <none>
+
+TIMING-18#15 Warning
+Missing input or output delay  
+An output delay is missing on td_o relative to the rising and/or falling clock edge(s) of tck.
+Related violations: <none>
+
+XDCH-2#1 Warning
+Same min and max delay values on IO port  
+The same input delay of 5.000 ns has been defined on port 'td_i' relative to clock tck for both max and min. Make sure this reflects the design intent.
+set_input_delay -clock tck -clock_fall 5.000 [get_ports td_i]
+/media/edabk2003/data/kien/TKS/ibex_zcu104/data/pins_zcu104.xdc (Line: 17)
+Related violations: <none>
+
+XDCH-2#2 Warning
+Same min and max delay values on IO port  
+The same input delay of 5.000 ns has been defined on port 'tms_i' relative to clock tck for both max and min. Make sure this reflects the design intent.
+set_input_delay -clock tck -clock_fall 5.000 [get_ports tms_i]
+/media/edabk2003/data/kien/TKS/ibex_zcu104/data/pins_zcu104.xdc (Line: 18)
+Related violations: <none>
+
+XDCH-2#3 Warning
+Same min and max delay values on IO port  
+The same output delay of 5.000 ns has been defined on port 'td_o' relative to clock tck for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock tck 5.000 [get_ports td_o]
+/media/edabk2003/data/kien/TKS/ibex_zcu104/data/pins_zcu104.xdc (Line: 19)
+Related violations: <none>
+
+LATCH-1#1 Advisory
+Existing latches in the design  
+There are 1 latches found in the design. Inferred latches are often the result of HDL coding mistakes, such as incomplete if or case statements.
+Related violations: <none>
+
+

@@ -1,0 +1,75 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Thu Aug  8 11:37:06 2024
+| Host         : edabk-ic-design running 64-bit Ubuntu 20.04.6 LTS
+| Command      : report_drc -file top_zcu104_drc_opted.rpt -pb top_zcu104_drc_opted.pb -rpx top_zcu104_drc_opted.rpx
+| Design       : top_zcu104
+| Device       : xczu7ev-ffvc1156-2-e
+| Speed File   : -2
+| Design State : Synthesized
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 6
++---------+----------+------------------------+------------+
+| Rule    | Severity | Description            | Violations |
++---------+----------+------------------------+------------+
+| DPIP-2  | Warning  | Input pipelining       | 3          |
+| DPOP-3  | Warning  | PREG Output pipelining | 1          |
+| DPOP-4  | Warning  | MREG Output pipelining | 1          |
+| PLCK-58 | Warning  | Clock Placer Checks    | 1          |
++---------+----------+------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+DPIP-2#1 Warning
+Input pipelining  
+DSP u_ibex_demo_system/u_top/u_ibex_core/ex_block_i/gen_multdiv_fast.multdiv_i/mac_res_signed input u_ibex_demo_system/u_top/u_ibex_core/ex_block_i/gen_multdiv_fast.multdiv_i/mac_res_signed/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#2 Warning
+Input pipelining  
+DSP u_ibex_demo_system/u_top/u_ibex_core/ex_block_i/gen_multdiv_fast.multdiv_i/mac_res_signed input u_ibex_demo_system/u_top/u_ibex_core/ex_block_i/gen_multdiv_fast.multdiv_i/mac_res_signed/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#3 Warning
+Input pipelining  
+DSP u_ibex_demo_system/u_top/u_ibex_core/ex_block_i/gen_multdiv_fast.multdiv_i/mac_res_signed input u_ibex_demo_system/u_top/u_ibex_core/ex_block_i/gen_multdiv_fast.multdiv_i/mac_res_signed/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPOP-3#1 Warning
+PREG Output pipelining  
+DSP u_ibex_demo_system/u_top/u_ibex_core/ex_block_i/gen_multdiv_fast.multdiv_i/mac_res_signed output u_ibex_demo_system/u_top/u_ibex_core/ex_block_i/gen_multdiv_fast.multdiv_i/mac_res_signed/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-4#1 Warning
+MREG Output pipelining  
+DSP u_ibex_demo_system/u_top/u_ibex_core/ex_block_i/gen_multdiv_fast.multdiv_i/mac_res_signed multiplier stage u_ibex_demo_system/u_top/u_ibex_core/ex_block_i/gen_multdiv_fast.multdiv_i/mac_res_signed/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+PLCK-58#1 Warning
+Clock Placer Checks  
+Sub-optimal placement for a global clock-capable IO pin and BUFG pair.
+Resolution: A dedicated routing path between the two can be used if: (a) The global clock-capable IO (GCIO) is placed on a GCIO capable site (b) The BUFG is placed in the same bank of the device as the GCIO pin. Both the above conditions must be met at the same time, else it may lead to longer and less predictable clock insertion delays.
+ This is normally an ERROR but the CLOCK_DEDICATED_ROUTE constraint is set to FALSE allowing your design to continue. The use of this override is highly discouraged as it may lead to very poor timing results. It is recommended that this error condition be corrected in the design.
+
+	tck_i_IBUF_inst/IBUFCTRL_INST (in tck_i_IBUF_inst macro) (IBUFCTRL.O) is locked to H7
+	tck_i_IBUF_BUFG_inst (BUFGCE.I) cannot be placed
+
+Related violations: <none>
+
+

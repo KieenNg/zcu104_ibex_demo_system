@@ -1,0 +1,43 @@
+set_property SRC_FILE_INFO {cfile:/media/edabk2003/data/kien/TKS/ibex_zcu104/data/pins_zcu104.xdc rfile:../../../../data/pins_zcu104.xdc id:1} [current_design]
+set_property src_info {type:XDC file:1 line:9 export:INPUT save:INPUT read:READ} [current_design]
+set_property CLOCK_DEDICATED_ROUTE ANY_CMT_COLUMN [get_nets ref_clk]
+set_property src_info {type:XDC file:1 line:13 export:INPUT save:INPUT read:READ} [current_design]
+set_input_jitter tck 1.000
+set_property src_info {type:XDC file:1 line:29 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict {PACKAGE_PIN E23 IOSTANDARD LVDS} [get_ports ref_clk_n]
+set_property src_info {type:XDC file:1 line:30 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict {PACKAGE_PIN F23 IOSTANDARD LVDS} [get_ports ref_clk_p]
+set_property src_info {type:XDC file:1 line:32 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN M11 IOSTANDARD LVCMOS33 } [get_ports {nrst_btn}]
+set_property src_info {type:XDC file:1 line:36 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN H8 IOSTANDARD LVCMOS33 } [get_ports td_i];
+set_property src_info {type:XDC file:1 line:37 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN G7 IOSTANDARD LVCMOS33 } [get_ports td_o];
+set_property src_info {type:XDC file:1 line:38 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN G8 IOSTANDARD LVCMOS33 } [get_ports tms_i];
+set_property src_info {type:XDC file:1 line:39 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN H7 IOSTANDARD LVCMOS33 } [get_ports tck_i];
+set_property src_info {type:XDC file:1 line:43 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN C19 IOSTANDARD LVCMOS18 } [get_ports ser0_tx];
+set_property src_info {type:XDC file:1 line:44 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN A20 IOSTANDARD LVCMOS18 } [get_ports ser0_rx];
+set_property src_info {type:XDC file:1 line:46 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN D5    IOSTANDARD LVCMOS33 } [get_ports { LED[0] }]; #IO_L24N_T3_35 Sch=led[4]
+set_property src_info {type:XDC file:1 line:47 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN D6    IOSTANDARD LVCMOS33 } [get_ports { LED[1] }]; #IO_25_35 Sch=led[5]
+set_property src_info {type:XDC file:1 line:48 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN A5    IOSTANDARD LVCMOS33 } [get_ports { LED[2] }]; #IO_L24P_T3_A01_D17_14 Sch=led[6]
+set_property src_info {type:XDC file:1 line:49 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN B5   IOSTANDARD LVCMOS33 } [get_ports { LED[3] }]; #IO_L24N_T3_A00_D16_14 Sch=led[7]
+set_property src_info {type:XDC file:1 line:56 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN J9    IOSTANDARD LVCMOS33 } [get_ports { DISP_CTRL[0] }]; #IO_L2P_T0_AD12P_35 Sch=ad_p[12]
+set_property src_info {type:XDC file:1 line:57 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN K9    IOSTANDARD LVCMOS33 } [get_ports { DISP_CTRL[1] }]; #IO_L2N_T0_AD12N_35 Sch=ad_n[12]
+set_property src_info {type:XDC file:1 line:58 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN K8    IOSTANDARD LVCMOS33 } [get_ports { DISP_CTRL[2] }]; #IO_L5P_T0_AD13P_35 Sch=ad_p[13]
+set_property src_info {type:XDC file:1 line:59 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN L8    IOSTANDARD LVCMOS33 } [get_ports { SPI_TX }]; #IO_L5N_T0_AD13N_35 Sch=ad_n[13]
+set_property src_info {type:XDC file:1 line:60 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN L10    IOSTANDARD LVCMOS33 } [get_ports { SPI_SCK }]; #IO_L8P_T1_AD14P_35 Sch=ad_p[14]
+set_property src_info {type:XDC file:1 line:61 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN M10    IOSTANDARD LVCMOS33 } [get_ports { DISP_CTRL[3] }]; #IO_L8N_T1_AD14N_35 Sch=ad_n[14]
